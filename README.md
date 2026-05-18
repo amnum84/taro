@@ -37,15 +37,9 @@ width:140px;
 height:140px;
 margin:0 auto 20px;
 border-radius:50%;
-background:linear-gradient(135deg,#f8d7da,#f3c5cf);
+object-fit:cover;
+display:block;
 border:3px solid #d4af37;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:14px;
-color:#8c6b6b;
-padding:15px;
-text-align:center;
 box-shadow:0 10px 25px rgba(212,175,55,0.2);
 }
 
@@ -215,9 +209,7 @@ height:135px;
 
 <div class="header">
 
-<div class="photo-placeholder">
-ВСТАВЬ СВОЁ ФОТО СЮДА
-</div>
+<img src="photo.jpg" class="photo-placeholder">
 
 <h1>Анна Воронцова</h1>
 
