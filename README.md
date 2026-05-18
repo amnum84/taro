@@ -1,1 +1,305 @@
-# taro
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анна Воронцова — Таро и Матрица Судьбы</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:linear-gradient(180deg,#fff7f8,#fdeff2);
+color:#5c4a4a;
+overflow-x:hidden;
+}
+
+.container{
+max-width:480px;
+margin:0 auto;
+padding:20px;
+}
+
+.header{
+text-align:center;
+padding:40px 20px 20px;
+}
+
+.photo-placeholder{
+width:140px;
+height:140px;
+margin:0 auto 20px;
+border-radius:50%;
+background:linear-gradient(135deg,#f8d7da,#f3c5cf);
+border:3px solid #d4af37;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
+color:#8c6b6b;
+padding:15px;
+text-align:center;
+box-shadow:0 10px 25px rgba(212,175,55,0.2);
+}
+
+h1{
+font-family:'Cormorant Garamond',serif;
+font-size:42px;
+font-weight:600;
+color:#b8860b;
+margin-bottom:10px;
+line-height:1.1;
+}
+
+.channel{
+font-size:18px;
+margin-bottom:15px;
+}
+
+.slogan{
+font-size:16px;
+line-height:1.6;
+color:#7a5f5f;
+font-style:italic;
+padding:0 10px;
+}
+
+.cards-box{
+margin-top:35px;
+background:white;
+border-radius:28px;
+padding:25px;
+box-shadow:0 10px 35px rgba(0,0,0,0.06);
+}
+
+.question-title{
+font-size:18px;
+margin-bottom:15px;
+text-align:center;
+font-weight:500;
+}
+
+textarea{
+width:100%;
+height:90px;
+border:none;
+border-radius:18px;
+padding:15px;
+background:#fff5f7;
+font-size:15px;
+resize:none;
+outline:none;
+font-family:'Montserrat',sans-serif;
+margin-bottom:25px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-bottom:25px;
+}
+
+.card{
+width:90px;
+height:150px;
+border-radius:18px;
+background:linear-gradient(180deg,#d4af37,#f5deb3);
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+position:relative;
+transition:0.3s;
+box-shadow:0 8px 18px rgba(212,175,55,0.25);
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card::before{
+content:"✦";
+font-size:30px;
+color:white;
+}
+
+.result{
+margin-top:20px;
+display:none;
+animation:fade 0.6s ease;
+}
+
+.result-card{
+background:#fff7f8;
+border-radius:18px;
+padding:18px;
+margin-bottom:15px;
+}
+
+.result-card h3{
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+color:#b8860b;
+margin-bottom:10px;
+}
+
+.result-card p{
+line-height:1.7;
+font-size:15px;
+}
+
+.telegram-btn{
+display:block;
+text-align:center;
+margin-top:30px;
+background:linear-gradient(135deg,#d4af37,#f0d78c);
+color:white;
+text-decoration:none;
+padding:16px;
+border-radius:18px;
+font-size:16px;
+font-weight:500;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(212,175,55,0.25);
+}
+
+.telegram-btn:hover{
+transform:translateY(-3px);
+}
+
+.footer{
+text-align:center;
+padding:35px 10px;
+font-size:14px;
+color:#8f7777;
+line-height:1.6;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:480px){
+
+h1{
+font-size:36px;
+}
+
+.card{
+width:80px;
+height:135px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div class="photo-placeholder">
+ВСТАВЬ СВОЁ ФОТО СЮДА
+</div>
+
+<h1>Анна Воронцова</h1>
+
+<div class="channel">
+Пространство Таро и Матрицы Судьбы
+</div>
+
+<div class="slogan">
+Таро и матрица судьбы без мистики — про выбор, ясность и внутреннюю опору.
+</div>
+
+</div>
+
+<div class="cards-box">
+
+<div class="question-title">
+Задайте свой вопрос картам ✨
+</div>
+
+<textarea id="question" placeholder="Например: что мешает мне выйти на новый уровень дохода?"></textarea>
+
+<div class="cards">
+
+<div class="card" onclick="showReading()"></div>
+<div class="card" onclick="showReading()"></div>
+<div class="card" onclick="showReading()"></div>
+
+</div>
+
+<div class="result" id="result">
+
+<div class="result-card">
+<h3>Императрица</h3>
+<p>
+Сейчас для вас важно перестать обесценивать себя и свои желания. Эта карта говорит про рост, изобилие и внутреннюю ценность. Деньги приходят туда, где женщина разрешает себе хотеть большего.
+</p>
+</div>
+
+<div class="result-card">
+<h3>8 Жезлов</h3>
+<p>
+Ситуация может начать двигаться быстрее, чем вам кажется. Важно не откладывать решения и не ждать идеального момента. Сейчас многое зависит от вашей готовности действовать.
+</p>
+</div>
+
+<div class="result-card">
+<h3>Королева Пентаклей</h3>
+<p>
+Ваш ресурс — в спокойствии, устойчивости и заботе о себе. Когда женщина перестаёт жить только через напряжение и контроль, её состояние начинает притягивать возможности и деньги.
+</p>
+</div>
+
+</div>
+
+<a class="telegram-btn" href="https://t.me/am_numerolog" target="_blank">
+Записаться к Анне
+</a>
+
+</div>
+
+<div class="footer">
+Анна Воронцова ✨<br>
+Таро и Матрица Судьбы
+</div>
+
+</div>
+
+<script>
+
+function showReading(){
+
+const result=document.getElementById('result');
+
+result.style.display='block';
+
+result.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+</script>
+
+</body>
+</html>
